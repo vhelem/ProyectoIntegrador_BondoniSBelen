@@ -14,6 +14,17 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HysComponent } from './components/hys/hys.component';
 import { ProyectoComponent } from './components/proyecto/proyecto.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { interceptorProvider } from './service/incerceptor-service';
+import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component'; 
+import { NgModel } from '@angular/forms';
+import { EditExperienciaComponent } from './components/experiencia/edit-experiencia/edit-experiencia.component';
+import { NeweducacionComponent } from './components/educacion/neweducacion.component';
+import { EditeducacionComponent } from './components/educacion/editeducacion.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,13 +38,25 @@ import { FooterComponent } from './components/footer/footer.component';
     HysComponent,
     ProyectoComponent,
     FooterComponent,
+    HomeComponent,
+    LoginComponent,
+    NewExperienciaComponent,
+    EditExperienciaComponent,
+    NeweducacionComponent,
+    EditeducacionComponent,
+    
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [
+    interceptorProvider,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
